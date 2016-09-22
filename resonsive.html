@@ -4,6 +4,9 @@
   <title>Photos of Apple Retail Store</title>
 	<link rel="stylesheet" href="bootstrap.css">
   <style>
+    * {
+      font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
+    }
     div.row {
       max-width: 1600px;
       margin: 0 auto;
@@ -11,9 +14,55 @@
     div.cell {
       background-color: #ddd;
       border-radius: 7px;
-      height: 250px;
+      height: 350px;
       width: 350px;
       margin: 10px auto;
+    }
+    div.cell > img {
+      width: 350px;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+    }
+    div.cell > div.row {
+      margin: 0;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 30px;
+      margin-left: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    div.col-title {
+      width: 90px;
+      margin-left: 10px;
+      margin-top: 0;
+      float: left;
+    }
+    div.col-title > p {
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    div.col-detail {
+      width: 200px;
+      margin-left: 10px;
+      margin-top: 0;
+      float: left;
+    }
+    div.col-detail > p {
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+      margin-left: 10px;
+      margin-top: 0;
+      font-weight: 200;
     }
   </style>
 </head>
@@ -21,7 +70,19 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
       <div class="cell">
-
+        <img src="images/002-Apple-Palo-Alto.jpg" alt="Palo Alto" />
+        <h2>Apple Palo Alto</h2>
+        <div class="row">
+          <div class="col-title">
+            <p>LOCATION</p>
+            <p>OPENING DATE</p>
+          </div>
+          <div class="col-detail">
+            <p>Palo Alto, United States</p>
+            <p>Oct 10, 2011</p>
+          </div>
+        </div>
+        <h1>R002</h1>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
