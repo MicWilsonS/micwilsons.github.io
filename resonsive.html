@@ -6,13 +6,39 @@
   <style>
     * {
       font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
+      color: white;
+    }
+    body {
+      background-color: #111;
+    }
+    nav {
+			position: fixed;
+			top: 0;
+			height: 80px;
+			width: 100%;
+			background-color: rgba(17, 17, 17, 0.6);
+			-webkit-backdrop-filter: saturate(180%) blur(20px);
+      z-index: 999;
+		}
+		legend {
+			color: white;
+			width: 100%;
+      font-size: 48px;
+      line-height: 80px;
+      font-weight: 500;
+			text-align: center;
+			margin: 0;
+			border: none;
+		}
+    div#wrap {
+      margin-top: 100px;
     }
     div.row {
       max-width: 1600px;
       margin: 0 auto;
     }
     div.cell {
-      background-color: #ddd;
+      background-color: #222;
       border-radius: 7px;
       height: 315px;
       width: 350px;
@@ -86,6 +112,10 @@
   </style>
 </head>
 <body>
+  <nav>
+    <legend>Photos of Apple Retail Store</legend>
+  </nav>
+  <div id="wrap">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
       <div class="cell">
@@ -274,6 +304,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 <html>
