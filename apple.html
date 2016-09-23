@@ -58,11 +58,12 @@
       margin: 0;
     }
     h2 {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 30px;
       margin-left: 10px;
       margin-top: 5px;
       margin-bottom: 5px;
+      font-weight: 300;
     }
     h1 {
       width: 90px;
@@ -83,18 +84,18 @@
     div.flag > img {
       height: 32px;
     }
-    div.pic div.badge {
+    .badge {
       float: right;
-      margin-top: 3px;
+      margin-top: 5px;
       margin-right: 10px;
-      padding: 0;
-      height: 26px;
-      width: 100px;
+      padding: 5px 10px;
+      width: 85px;
       background-color: #fb0;
-    }
-    div.pic div.badge > p {
-      line-height: 26px;
       color: black;
+      display: none;
+    }
+    .updating .badge {
+      display: block;
     }
     .closed > .cell {
       padding-top: 40px;
@@ -122,12 +123,14 @@
       display: inline;
     }
     .closed p.badge {
+      float: none;
       display: block;
       width: 80px;
       margin: 0 auto;
       margin-top: 40px !inherit;
       padding: 5px 10px;
       text-align: center;
+      background-color: #aaa;
     }
   </style>
   <script type="text/javascript">
@@ -256,7 +259,12 @@
 
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
-			var pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/" + storeAbbr + "_hero_2x.jpg\" alt=\"" + storeNumber + "\">";
+      var pic = "";
+      if (storeNumber == "032") {
+        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
+      } else {
+        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/" + storeAbbr + "_hero_2x.jpg\" alt=\"" + storeNumber + "\">";
+      }
 
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
@@ -265,7 +273,7 @@
 			if (storeNumber == "658" || storeNumber == "659") {
 				store = "<h2><b>Apple Watch</b> at " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
 			} else {
-				store = "<h2><b>Apple</b> " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+				store = "<h2><b>Apple</b> " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
 			}
 
 			document.getElementById(storeNumber).innerHTML = "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\">"+ pic + store + "</div></a>";
@@ -360,7 +368,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="025">
       <script type="text/javascript">pictureSet("US", "Westfarms", "025");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="026">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="026">
       <script type="text/javascript">pictureSet("US", "Chandler Fashion Center", "026");</script>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="027">
@@ -579,7 +587,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="100">
       <script type="text/javascript">pictureSet("US", "Alderwood Mall", "100");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="101">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="101">
       <script type="text/javascript">pictureSet("US", "Stoneridge Mall", "101");</script>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="102">
@@ -735,7 +743,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="155">
       <script type="text/javascript">pictureSet("US", "Burlington", "155");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="156">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="156">
       <script type="text/javascript">pictureSet("US", "Brea Mall", "156");</script>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="159">
@@ -939,7 +947,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="245">
       <script type="text/javascript">pictureSet("UK", "Covent Garden", "245");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="247">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="247">
       <script type="text/javascript">pictureSet("US", "Arrowhead", "247");</script>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="248">
@@ -1746,13 +1754,13 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="672">
       <script type="text/javascript">pictureSet("Macau", "Galaxy Macau", "672");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="673">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="673">
       <script type="text/javascript">pictureSet("Hong Kong", "apm Hong Kong", "673");</script>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="683">
       <script type="text/javascript">pictureSet("China", "Global Harbor", "683");</script>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="708">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 updating" id="708">
       <script type="text/javascript">pictureSet("Mexico", "Vía Santa Fe", "708");</script>
     </div>
   </div>
