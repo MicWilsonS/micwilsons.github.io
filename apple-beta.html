@@ -46,8 +46,12 @@
     width: 100%;
     margin-bottom: 15px;
   }
+  div.updating div.cell {
+    background-color: #540;
+  }
   div.cell > img {
     width: 90px;
+    height: 60px;
     float: left;
   }
   div.cell > div.row {
@@ -58,10 +62,13 @@
     line-height: 20px;
     margin: 0;
     margin-left: 100px;
-    font-weight: 300;
+    font-weight: 100;
+  }
+  h2 > b {
+    font-weight: 100;
   }
   h1 {
-    width: 90px;
+    width: 80px;
     font-size: 30px;
     line-height: 40px;
     margin: 0;
@@ -80,17 +87,7 @@
     height: 32px;
   }
   .badge {
-    float: right;
-    margin-top: 5px;
-    margin-right: 10px;
-    padding: 5px 10px;
-    width: 85px;
-    background-color: rgba(0, 0, 0, 0);;
-    color: #fb0;
     display: none;
-  }
-  .updating .badge {
-    display: block;
   }
   .closed > .cell {
     padding-top: 40px;
