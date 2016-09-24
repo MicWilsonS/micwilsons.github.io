@@ -49,6 +49,9 @@
   div.updating div.cell {
     background-color: #540;
   }
+  div.closed div.cell {
+    background-color: #000;
+  }
   div.cell > img {
     width: 90px;
     height: 60px;
@@ -58,7 +61,7 @@
     margin: 0;
   }
   h2 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     margin: 0;
     margin-left: 100px;
@@ -66,6 +69,7 @@
   }
   h2 > b {
     font-weight: 100;
+    display:none;
   }
   h1 {
     width: 80px;
@@ -89,41 +93,7 @@
   .badge {
     display: none;
   }
-  .closed > .cell {
-    padding-top: 40px;
-  }
-  .closed h1 {
-    width: 360px;
-    height: 120px;
-    font-size: 120px;
-    line-height: 120px;
-    text-align: center;
-    margin: 0;
-    margin-top: 10px;
-  }
-  .closed h2 {
-    width: 360px;
-    height: 80px;
-    font-size: 30px;
-    line-height: 60px;
-    text-align: center;
-    margin: 0;
-  }
-  .closed h2 > img {
-    width: 28px;
-    height: 28px;
-    display: inline;
-  }
-  .closed p.badge {
-    float: none;
-    display: block;
-    width: 80px;
-    margin: 0 auto;
-    margin-top: 40px !inherit;
-    padding: 5px 10px;
-    text-align: center;
-    background-color: #aaa;
-  }
+
   @media (min-width: 768px) {
     * {
       font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
@@ -170,6 +140,8 @@
     }
     div.cell > img {
       width: 350px;
+      height: 233.3px;
+      margin-bottom: 5px;
       border-top-left-radius: 7px;
       border-top-right-radius: 7px;
     }
@@ -180,7 +152,6 @@
       font-size: 18px;
       line-height: 30px;
       margin-left: 10px;
-      margin-top: 5px;
       margin-bottom: 5px;
       font-weight: 300;
     }
@@ -216,7 +187,7 @@
     .updating .badge {
       display: block;
     }
-    .closed > .cell {
+    /*.closed > .cell {
       padding-top: 40px;
     }
     .closed h1 {
@@ -240,14 +211,10 @@
       width: 28px;
       height: 28px;
       display: inline;
-    }
-    .closed p.badge {
-      float: none;
+    }*/
+    .closed .badge {
       display: block;
       width: 80px;
-      margin: 0 auto;
-      margin-top: 40px !inherit;
-      padding: 5px 10px;
       text-align: center;
       background-color: #aaa;
     }
@@ -401,9 +368,9 @@
 		function closedStore(country, location, storeNumber){
 			var flagIconLink = "http://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
-			store = "<h1>R" + storeNumber + "</h1><h2><img src=\"" + flagIconLink + "\"> " + location + "</h2>";
+			store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">CLOSED</p></div>";
 
-			document.getElementById(storeNumber).innerHTML = "<div class=\"cell\"><p class=\"badge\">CLOSED</>" + store + "</div>";
+			document.getElementById(storeNumber).innerHTML = "<div class=\"cell\">" + "<img src=\"images/no_pic.png\" alt=\"" + storeNumber + "\">" + store + "</div>";
 		}
 	</script>
 </head>
