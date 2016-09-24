@@ -332,7 +332,7 @@
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
       var pic = "";
-      if (storeNumber == "032") {
+      if (storeNumber == "032" || storeNumber == "118" ) {
         pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
       } else {
         pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/" + storeAbbr + "_hero_2x.jpg\" alt=\"" + storeNumber + "\">";
