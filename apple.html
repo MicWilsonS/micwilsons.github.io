@@ -6,6 +6,95 @@
   <meta name="viewport" content="width=device-width">
   <meta charset="utf-8">
   <style>
+  * {
+    font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
+    color: white;
+  }
+  body {
+    background-color: #111;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 999;
+  }
+  legend {
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    line-height: 60px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    border: none;
+  }
+  div#wrap {
+    margin-top: 80px;
+    padding: 0;
+  }
+  div.row {
+    width: 100%;
+    margin: 0;
+  }
+  div.cell {
+    background-color: #222;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  div.updating div.cell {
+    background-color: #540;
+  }
+  div.closed div.cell {
+    background-color: #000;
+  }
+  div.cell > img {
+    width: 90px;
+    height: 60px;
+    float: left;
+  }
+  div.cell > div.row {
+    margin: 0;
+  }
+  h2 {
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    margin-left: 100px;
+    font-weight: 100;
+  }
+  h2 > b {
+    font-weight: 100;
+    display:none;
+  }
+  h1 {
+    width: 80px;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0;
+    margin-left: 10px;
+    font-weight: 200;
+    float: left;
+  }
+  h1:hover {
+    text-decoration: none;
+  }
+  div.flag {
+    float: right;
+    margin-right: 10px;
+  }
+  div.flag > img {
+    height: 32px;
+  }
+  .badge {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
     * {
       font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
       color: white;
@@ -51,6 +140,8 @@
     }
     div.cell > img {
       width: 350px;
+      height: 233.3px;
+      margin-bottom: 5px;
       border-top-left-radius: 7px;
       border-top-right-radius: 7px;
     }
@@ -61,7 +152,6 @@
       font-size: 18px;
       line-height: 30px;
       margin-left: 10px;
-      margin-top: 5px;
       margin-bottom: 5px;
       font-weight: 300;
     }
@@ -97,7 +187,7 @@
     .updating .badge {
       display: block;
     }
-    .closed > .cell {
+    /*.closed > .cell {
       padding-top: 40px;
     }
     .closed h1 {
@@ -121,17 +211,14 @@
       width: 28px;
       height: 28px;
       display: inline;
-    }
-    .closed p.badge {
-      float: none;
+    }*/
+    .closed .badge {
       display: block;
       width: 80px;
-      margin: 0 auto;
-      margin-top: 40px !inherit;
-      padding: 5px 10px;
       text-align: center;
       background-color: #aaa;
     }
+  }
   </style>
   <script type="text/javascript">
 		function normalLetter(string, country){
@@ -253,7 +340,7 @@
 			return {countryCode:countryCode, flag:flag};
 		}
 
-		function pictureSet(country, storeName, storeNumber){
+    function pictureSet(country, storeName, storeNumber){
 			var store = "";
 			var storeLink = "";
 
@@ -281,9 +368,9 @@
 		function closedStore(country, location, storeNumber){
 			var flagIconLink = "http://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
-			store = "<h1>R" + storeNumber + "</h1><h2><img src=\"" + flagIconLink + "\"> " + location + "</h2>";
+			store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">CLOSED</p></div>";
 
-			document.getElementById(storeNumber).innerHTML = "<div class=\"cell\"><p class=\"badge\">CLOSED</>" + store + "</div>";
+			document.getElementById(storeNumber).innerHTML = "<div class=\"cell\">" + "<img src=\"images/no_pic.png\" alt=\"" + storeNumber + "\">" + store + "</div>";
 		}
 	</script>
 </head>
