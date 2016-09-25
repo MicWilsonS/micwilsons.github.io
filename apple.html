@@ -332,12 +332,8 @@
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
       var pic = "";
-      if (storeNumber == "032" || storeNumber == "118" ) {
-        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
-      } else {
-        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/" + storeAbbr + "_hero_2x.jpg\" alt=\"" + storeNumber + "\">";
-      }
-
+      pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
+      
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
 			var flagIconLink = "http://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
