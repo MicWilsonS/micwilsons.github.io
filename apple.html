@@ -336,10 +336,14 @@
 
       var piclink_small_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
       var piclink_small_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
-      var piclink_large_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large.jpg";
-      var piclink_large_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg";
-      var pic = "<img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
-      // var pic = "<picture><source media=\"(max-width: 768px)\" srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x\"><img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\"></picture>";
+      var piclink_large_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
+      var piclink_large_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
+      var pic = "";
+      if (document.documentElement.clientWidth <= 768) {
+        var pic = "<img srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
+      } else {
+        var pic = "<img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
+      }
 
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
