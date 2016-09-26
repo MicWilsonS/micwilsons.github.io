@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="bootstrap.css">
   <meta name="viewport" content="width=device-width">
   <meta charset="utf-8">
+  <meta name="author" content="Míc Sun">
   <style>
   * {
     font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
@@ -52,7 +53,7 @@
   div.closed div.cell {
     background-color: #000;
   }
-  div.cell > img {
+  div.cell img {
     width: 90px;
     height: 60px;
     float: left;
@@ -89,6 +90,7 @@
   }
   div.flag > img {
     height: 32px;
+    width: 32px;
   }
   .badge {
     display: none;
@@ -144,7 +146,7 @@
     div.cell:hover {
       box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
     }
-    div.cell > img {
+    div.cell img {
       width: 350px;
       height: 233.3px;
       margin-bottom: 5px;
@@ -162,7 +164,7 @@
       font-weight: 300;
     }
     h2 > b {
-      font-weight: 500;
+      font-weight: 300;
       display: inline;
     }
     h1 {
@@ -183,6 +185,7 @@
     }
     div.flag > img {
       height: 32px;
+      width: 32px;
     }
     .badge {
       float: right;
@@ -331,19 +334,24 @@
 
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
+      var piclink_small_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+      var piclink_small_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+      var piclink_large_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large.jpg";
+      var piclink_large_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg";
       var pic = "";
-      if (storeNumber == "032" || storeNumber == "118" ) {
-        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
+      if (document.documentElement.clientWidth <= 768) {
+        var pic = "<img srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
       } else {
-        pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/" + storeAbbr + "_hero_2x.jpg\" alt=\"" + storeNumber + "\">";
+        var pic = "<img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
       }
+      // var pic = "<picture><source media=\"(max-width: 768px)\" srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x\"><img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\"></picture>";
 
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
 			var flagIconLink = "http://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
 			if (storeNumber == "658" || storeNumber == "659") {
-				store = "<h2><b>Apple Watch</b> at " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+				store = "<h2>Apple Watch at " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
 			} else {
 				store = "<h2><b>Apple</b> " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
 			}
