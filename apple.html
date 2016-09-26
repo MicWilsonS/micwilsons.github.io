@@ -163,7 +163,7 @@
       font-weight: 300;
     }
     h2 > b {
-      font-weight: 500;
+      font-weight: 300;
       display: inline;
     }
     h1 {
@@ -332,8 +332,9 @@
 
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
-      var pic = "";
-      pic = "<img src=\"http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg\" alt=\"" + storeNumber + "\">";
+      var piclink_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large.jpg";
+      var piclink_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg";
+      var pic = "<img srcset=\"" + piclink_1x + " 1x, " + piclink_2x + " 2x\" alt=\"" + storeNumber + "\">";
 
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
