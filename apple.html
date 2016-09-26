@@ -53,7 +53,7 @@
   div.closed div.cell {
     background-color: #000;
   }
-  div.cell > img {
+  div.cell > picture > img {
     width: 90px;
     height: 60px;
     float: left;
@@ -145,7 +145,7 @@
     div.cell:hover {
       box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
     }
-    div.cell > img {
+    div.cell picture > img {
       width: 350px;
       height: 233.3px;
       margin-bottom: 5px;
@@ -332,9 +332,12 @@
 
 			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country);
 
-      var piclink_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large.jpg";
-      var piclink_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg";
-      var pic = "<img srcset=\"" + piclink_1x + " 1x, " + piclink_2x + " 2x\" alt=\"" + storeNumber + "\">";
+      var piclink_small_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+      var piclink_small_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+      var piclink_large_1x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large.jpg";
+      var piclink_large_2x = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_large_2x.jpg";
+      // var pic = "<img srcset=\"" + piclink_small_1x + " 320w, " + piclink_small_2x + " 320w 2x, " + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
+      var pic = "<picture><source media=\"(max-width: 768px)\" srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x\"><img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\"></picture>";
 
 			storeLink = "http://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
