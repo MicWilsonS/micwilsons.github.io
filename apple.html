@@ -358,7 +358,7 @@
 			document.getElementById(storeNumber).innerHTML = "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\">"+ pic + store + "</div></a>";
 		};
 		function closedStore(country, location, storeNumber){
-			var flagIconLink = "http://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
+			var flagIconLink = "images/flags/" + countryValue(country).flag + "_2x.png";
 
 			store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">CLOSED</p></div>";
 
