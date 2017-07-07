@@ -19,7 +19,7 @@
     top: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(17, 17, 17, 0.6);
+    background-color: rgba(200, 200, 200, 0.6);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     z-index: 999;
   }
@@ -109,7 +109,7 @@
 			top: 0;
 			height: 80px;
 			width: 100%;
-			background-color: rgba(17, 17, 17, 0.6);
+			background-color: rgba(200, 200, 200, 0.6);
 			-webkit-backdrop-filter: saturate(180%) blur(20px);
       z-index: 999;
 		}
@@ -205,6 +205,22 @@
       width: 80px;
       text-align: center;
       background-color: #aaa;
+    }
+    ul {
+      list-style-type: none;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+    ul > li {
+      display: inline;
+      width: 230px;
+      height: 40px;
+      margin: 5px;
+      line-height: 40px;
+      font-size: 18px;
+      float: left;
+      border: 1px solid white;
+      border-radius: 7px;
     }
   }
   </style>
@@ -365,9 +381,6 @@
 <body>
   <nav>
     <legend>Visit Apple (...without Store)!</legend>
-  </nav>
-  <div id="wrap">
-  <div class="row">
     <div id="filters">
       <ul>
         <li><input id="checkUS" type="checkbox" value="US" checked onchange="filter();"> United States</li>
@@ -394,6 +407,9 @@
         <li><input id="checkUK" type="checkbox" value="UK" checked onchange="filter();"> United Kingdom</li>
       </ul>
     </div>
+  </nav>
+  <div id="wrap">
+  <div class="row">
     <script type="text/javascript">
       pictureSet("US", "Glendale Galleria", "001", "");
       pictureSet("US", "Palo Alto", "002", "");
