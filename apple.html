@@ -352,6 +352,7 @@
       store = "<h2><b>Apple</b> " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
 
       document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\">"+ pic + store + "</div></a></div>");
+      count = count + 1;
     };
     function closedStore(country, location, storeNumber){
       var flagIconLink = "images/flags/" + countryValue(country).flag + "_2x.png";
@@ -369,6 +370,7 @@
   <div id="wrap">
   <div class="row">
     <script type="text/javascript">
+      var count = 0;
       pictureSet("US", "Glendale Galleria", "001", "");
       pictureSet("US", "Palo Alto", "002", "");
       pictureSet("US", "Bellevue Square", "003", "");
@@ -871,6 +873,7 @@
       pictureSet("China", "Qibao", "705", "");
       pictureSet("Mexico", "Vía Santa Fe", "708", "");
       pictureSet("Taiwan", "Taipei 101", "713", "");
+      console.log(count + " stores in the world.");
     </script>
   </div>
   </div>
