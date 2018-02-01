@@ -212,8 +212,12 @@
 		function normalLetter(string, country, storeNumber){
 			for (var i = 2; i >= 0; i--) {
 				string = string.replace("é", "e");
+				if (country == "Austria") {
+					string = string.replace("ä", "ae");
+				} else {
+					string = string.replace("ä", "a");
+				}
 				string = string.replace("à", "a");
-				string = string.replace("ä", "a");
 				string = string.replace("í", "i");
 				string = string.replace("ü", "ue");
 				string = string.replace("ú", "u");
