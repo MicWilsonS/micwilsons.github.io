@@ -212,12 +212,12 @@
 		function normalLetter(string, country, storeNumber){
 			for (var i = 2; i >= 0; i--) {
 				string = string.replace("é", "e");
-				if (country == "Austria") {
+				string = string.replace("à", "a");
+        if (country == "Austria") {
 					string = string.replace("ä", "ae");
 				} else {
 					string = string.replace("ä", "a");
 				}
-				string = string.replace("à", "a");
 				string = string.replace("í", "i");
 				string = string.replace("ü", "ue");
 				string = string.replace("ú", "u");
@@ -501,13 +501,13 @@
       pictureSet("US", "South Shore", "110", "");
       pictureSet("US", "St. Johns Town Center", "111", "");
       pictureSet("US", "Bethesda Row", "112", "");
-      pictureSet("UK", "Bluewater", "113", "updating");
+      pictureSet("UK", "Bluewater", "113", "");
       pictureSet("US", "Saint Louis Galleria", "114", "");
       pictureSet("US", "Lincoln Road", "115", "");
       pictureSet("US", "Crabtree Valley Mall", "116", "updating");
       pictureSet("US", "Garden State Plaza", "117", "");
       pictureSet("UK", "Birmingham", "118", "");
-      pictureSet("Japan", "Shibuya", "119", "");
+      pictureSet("Japan", "Shibuya", "119", "updating");
       pictureSet("Canada", "Yorkdale", "120", "");
       pictureSet("Canada", "Eaton Centre", "121", "");
       pictureSet("US", "Manhattan Village", "122", "");
