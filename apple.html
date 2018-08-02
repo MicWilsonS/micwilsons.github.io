@@ -342,34 +342,34 @@
 
       var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country, storeNumber);
 
-      switch (storeNumber) {
-        case 116: //Crabtree Valley Mall
-        case 667: //Piazza Liberty
-        case 692: //Garosugil
-        case 715: //Downtown Brooklyn
-          var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.png";
-          var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.png";
-          var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.png";
-          var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.png";
-          break;
-        default:
-          var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
-          var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
-          var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
-          var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
-      }
-
-      // if (storeNumber == 715 || storeNumber == 692 || storeNumber == 116) {
-      //   var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.png";
-      //   var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.png";
-      //   var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.png";
-      //   var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.png";
-      // } else {
-      //   var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
-      //   var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
-      //   var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
-      //   var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
+      // switch (storeNumber) {
+      //   case 116: //Crabtree Valley Mall
+      //   case 667: //Piazza Liberty
+      //   case 692: //Garosugil
+      //   case 715: //Downtown Brooklyn
+      //     var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.png";
+      //     var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.png";
+      //     var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.png";
+      //     var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.png";
+      //     break;
+      //   default:
+      //     var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+      //     var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+      //     var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
+      //     var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
       // }
+
+      if (storeNumber == 715 || storeNumber == 692 || storeNumber == 116 || storeNumber == 667) {
+        var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.png";
+        var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.png";
+        var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.png";
+        var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.png";
+      } else {
+        var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+        var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+        var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
+        var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
+      }
 
       var pic = "";
       if (document.documentElement.clientWidth <= 768) {
