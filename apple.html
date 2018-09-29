@@ -48,7 +48,8 @@
     margin-bottom: 15px;
   }
   div.updating div.cell {
-    background-color: #540;
+    background-color: #fb0;
+    color: black;
   }
   div.closed div.cell {
     background-color: #000;
@@ -62,15 +63,18 @@
     margin: 0;
   }
   h2 {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 20px;
     margin: 0;
     margin-left: 100px;
-    font-weight: 100;
+    font-weight: 400;
   }
   h2 > b {
-    font-weight: 100;
+    font-weight: 400;
     display:none;
+  }
+  h2 > span.corp {
+    display: none;
   }
   h1 {
     width: 80px;
@@ -78,8 +82,11 @@
     line-height: 40px;
     margin: 0;
     margin-left: 10px;
-    font-weight: 200;
+    font-weight: 400;
     float: left;
+  }
+  div.updating h1 {
+    color: black;
   }
   h1:hover {
     text-decoration: none;
@@ -132,13 +139,16 @@
     }
     div.cell {
       background-color: #222;
-      border-radius: 7px;
+      border-radius: 10px;
       height: 315px;
       width: 350px;
       margin: 10px auto;
     }
     div.updating div.cell {
-      background-color: #222;
+      background-color: #fb0;
+    }
+    div.updating span.corp {
+      color: black;
     }
     div.closed div.cell {
       background-color: #222;
@@ -150,8 +160,8 @@
       width: 350px;
       height: 233.3px;
       margin-bottom: 5px;
-      border-top-left-radius: 7px;
-      border-top-right-radius: 7px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
     div.cell > div.row {
       margin: 0;
@@ -161,10 +171,13 @@
       line-height: 30px;
       margin-left: 10px;
       margin-bottom: 5px;
-      font-weight: 300;
+      font-weight: 400;
     }
     h2 > b {
       font-weight: 300;
+      display: inline;
+    }
+    h2 span.corp {
       display: inline;
     }
     h1 {
@@ -173,7 +186,7 @@
       line-height: 30px;
       margin-left: 10px;
       margin-top: 0;
-      font-weight: 200;
+      font-weight: 400;
       float: left;
     }
     h1:hover {
@@ -198,13 +211,16 @@
       display: none;
     }
     .updating .badge {
+      border: 2px black solid;
       display: block;
     }
     .closed .badge {
       display: block;
       width: 80px;
       text-align: center;
-      background-color: #aaa;
+      background-color: #222;
+      color: white;
+      border: 2px #aaa solid;
     }
   }
   </style>
@@ -385,7 +401,7 @@
       if (storeNumber == "824") {
         store = "<h2>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
       } else {
-        store = "<h2>Apple " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+        store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
       }
 
       document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\">"+ pic + store + "</div></a></div>");
