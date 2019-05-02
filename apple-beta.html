@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head>
-  <title>Visit Apple (...without Store)!</title>
+  <title>Visit Apple Town Square!</title>
 	<link rel="stylesheet" href="bootstrap.css">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <meta charset="utf-8">
@@ -19,7 +19,7 @@
     top: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(200, 200, 200, 0.6);
+    background-color: rgba(17, 17, 17, 0.6);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     z-index: 999;
   }
@@ -48,7 +48,8 @@
     margin-bottom: 15px;
   }
   div.updating div.cell {
-    background-color: #540;
+    background-color: #fb0;
+    color: black;
   }
   div.closed div.cell {
     background-color: #000;
@@ -58,19 +59,28 @@
     height: 60px;
     float: left;
   }
+  div.gf div.cell{
+    background-color: #B96;
+  }
+  div.gf div.gfbadge {
+    display: none;
+  }
   div.cell > div.row {
     margin: 0;
   }
   h2 {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 20px;
     margin: 0;
     margin-left: 100px;
-    font-weight: 100;
+    font-weight: 400;
   }
   h2 > b {
-    font-weight: 100;
+    font-weight: 400;
     display:none;
+  }
+  h2 > span.corp {
+    display: none;
   }
   h1 {
     width: 80px;
@@ -78,8 +88,11 @@
     line-height: 40px;
     margin: 0;
     margin-left: 10px;
-    font-weight: 200;
+    font-weight: 400;
     float: left;
+  }
+  div.updating h1 {
+    color: black;
   }
   h1:hover {
     text-decoration: none;
@@ -92,7 +105,10 @@
     height: 32px;
     width: 32px;
   }
-  .badge {
+  div.ubadge {
+    display: none;
+  }
+  div.cbadge {
     display: none;
   }
 
@@ -109,7 +125,7 @@
 			top: 0;
 			height: 80px;
 			width: 100%;
-			background-color: rgba(200, 200, 200, 0.6);
+			background-color: rgba(17, 17, 17, 0.6);
 			-webkit-backdrop-filter: saturate(180%) blur(20px);
       z-index: 999;
 		}
@@ -130,15 +146,31 @@
       max-width: 1600px;
       margin: 0 auto;
     }
-    div.cell {
+    div.cell, div.gf div.cell {
       background-color: #222;
-      border-radius: 7px;
+      border-radius: 10px;
       height: 315px;
       width: 350px;
       margin: 10px auto;
     }
     div.updating div.cell {
-      background-color: #222;
+      background-color: #fb0;
+    }
+    div.updating span.corp {
+      color: black;
+    }
+    div.updating div.ubadge {
+      display: block;
+      height: 36px;
+      width: 350px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5em;
+      line-height: 36px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      margin-bottom: -36px;
     }
     div.closed div.cell {
       background-color: #222;
@@ -146,12 +178,46 @@
     div.cell:hover {
       box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
     }
-    div.cell img {
+    div.normal img {
       width: 350px;
       height: 233.3px;
       margin-bottom: 5px;
-      border-top-left-radius: 7px;
-      border-top-right-radius: 7px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    div.gf div.gfbadge {
+      display: block;
+      height: 35px;
+      width: 350px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5em;
+      line-height: 35px;
+      text-align: center;
+      background-color: #B96;
+      border-bottom: 1px solid black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    div.gf img, div.closed img {
+      width: 350px;
+      height: 196.9px;
+      margin-bottom: 5px;
+    }
+
+    div.closed div.cbadge {
+      display: block;
+      height: 35px;
+      width: 350px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5em;
+      line-height: 35px;
+      text-align: center;
+      background-color: #222;
+      border-bottom: 1px solid black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
     div.cell > div.row {
       margin: 0;
@@ -161,10 +227,13 @@
       line-height: 30px;
       margin-left: 10px;
       margin-bottom: 5px;
-      font-weight: 300;
+      font-weight: 400;
     }
     h2 > b {
       font-weight: 300;
+      display: inline;
+    }
+    h2 span.corp {
       display: inline;
     }
     h1 {
@@ -173,7 +242,7 @@
       line-height: 30px;
       margin-left: 10px;
       margin-top: 0;
-      font-weight: 200;
+      font-weight: 400;
       float: left;
     }
     h1:hover {
@@ -187,24 +256,12 @@
       height: 32px;
       width: 32px;
     }
-    .badge {
-      float: right;
-      margin-top: 5px;
-      margin-right: 10px;
-      padding: 5px 10px;
-      width: 85px;
-      background-color: #fb0;
-      color: black;
-      display: none;
-    }
-    .updating .badge {
-      display: block;
-    }
-    .closed .badge {
-      display: block;
-      width: 80px;
-      text-align: center;
-      background-color: #aaa;
+    div.filter {
+      height: 200px;
+      padding: 20px;
+      background-color: rgba(17, 17, 17, 0.6);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      z-index: 999;
     }
     ul {
       list-style-type: none;
@@ -214,22 +271,26 @@
     ul > li {
       display: inline;
       width: 230px;
-      height: 40px;
+      height: 24px;
       margin: 5px;
-      line-height: 40px;
-      font-size: 18px;
+      line-height: 24px;
+      font-size: 14px;
       float: left;
-      border: 1px solid white;
+      background-color: #4ad;
       border-radius: 7px;
     }
   }
   </style>
-  <script type="text/javascript" >
+  <script type="text/javascript">
 		function normalLetter(string, country, storeNumber){
 			for (var i = 2; i >= 0; i--) {
 				string = string.replace("é", "e");
 				string = string.replace("à", "a");
-				string = string.replace("ä", "a");
+        if (country == "Austria") {
+					string = string.replace("ä", "ae");
+				} else {
+					string = string.replace("ä", "a");
+				}
 				string = string.replace("í", "i");
 				string = string.replace("ü", "ue");
 				string = string.replace("ú", "u");
@@ -256,6 +317,10 @@
 			case "Australia":
 				countryCode="au/";
 				flag = "australia";
+				break;
+      case "Austria":
+				countryCode="at/";
+				flag = "austria";
 				break;
 			case "Brazil":
 				countryCode="br/";
@@ -305,6 +370,10 @@
 				countryCode="tr/";
 				flag = "turkey";
 				break;
+      case "Thailand":
+        countryCode="th/";
+				flag = "thailand";
+				break;
 			case "UK":
 				countryCode="uk/";
 				flag = "united_kingdom";
@@ -345,15 +414,23 @@
 		}
 
     function pictureSet(country, storeName, storeNumber, storeStatus){
-			var store = "";
-			var storeLink = "";
+      var store = "";
+      var storeLink = "";
 
-			var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country, storeNumber);
+      var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country, storeNumber);
 
-      var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
-      var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
-      var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
-      var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
+      if (storeNumber == "116") {
+        var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.png";
+        var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.png";
+        var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.png";
+        var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.png";
+      } else {
+        var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+        var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+        var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium.jpg";
+        var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_medium_2x.jpg";
+      }
+
       var pic = "";
       if (document.documentElement.clientWidth <= 768) {
         pic = "<img srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
@@ -361,34 +438,65 @@
         pic = "<img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
       }
 
-			storeLink = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
+      storeLink = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
-			var flagIconLink = "https://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
+      var flagIconLink = "https://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
-      if (storeNumber == "824") {
-        store = "<h2>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+      store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+
+      document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 normal " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\"><div class=\"ubadge\">UPDATING</div>"+ pic + store + "</div></a></div>");
+      count = count + 1;
+    };
+
+    function globalFlagship(country, storeName, storeNumber, storeStatus){
+      var store = "";
+      var storeLink = "";
+
+      var storeAbbr = normalLetter(storeName.replace(/\s+/g, '').toLowerCase(), country, storeNumber);
+
+      var piclink_small_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small.jpg";
+      var piclink_small_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_small_2x.jpg";
+      var piclink_large_1x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_xlarge.jpg";
+      var piclink_large_2x = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/images/hero_xlarge_2x.jpg";
+
+      var pic = "";
+      if (document.documentElement.clientWidth <= 768) {
+        pic = "<img srcset=\"" + piclink_small_1x + " 1x, " + piclink_small_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
       } else {
-        store = "<h2>Apple " + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+        pic = "<img srcset=\"" + piclink_large_1x + " 1x, " + piclink_large_2x + " 2x" + "\" alt=\"" + storeNumber + "\">";
       }
 
-			document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\">"+ pic + store + "</div></a></div>");
-		};
-		function closedStore(country, location, storeNumber){
-			var flagIconLink = "images/flags/" + countryValue(country).flag + "_2x.png";
+      storeLink = "https://www.apple.com/" + countryValue(country).countryCode + "retail/" + storeAbbr + "/";
 
-			store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">CLOSED</p></div>";
+      var flagIconLink = "https://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
-			document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 closed " + country + "\" id=\"" + storeNumber + "\">" + "<div class=\"cell\">" + "<img src=\"images/no_pic.png\" alt=\"" + storeNumber + "\">" + store + "</div></div>");
-		}
+      if (storeNumber == "824") {
+        store = "<h2>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+      } else {
+        store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+      }
+
+      document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 gf " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\"><div class=\"gfbadge\">GLOBAL FLAGSHIP</div>"+ pic + store + "</div></a></div>");
+      count = count + 1;
+    };
+
+    function closedStore(country, location, storeNumber){
+      var flagIconLink = "images/flags/" + countryValue(country).flag + "_2x.png";
+
+      store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
+
+      document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 closed " + country + "\" id=\"" + storeNumber + "\">" + "<div class=\"cell\"><div class=\"cbadge\">CLOSED</div>" + "<img src=\"images/no_pic.png\" alt=\"" + storeNumber + "\">" + store + "</div></div>");
+    }
 	</script>
 </head>
 <body>
   <nav>
-    <legend>Visit Apple (...without Store)!</legend>
-    <div id="filters">
+    <legend>Visit Apple Town Square!</legend>
+    <div class="filter" id="filters">
       <ul>
         <li><input id="checkUS" type="checkbox" value="US" checked onchange="filter();"> United States</li>
         <li><input id="checkAU" type="checkbox" value="Australia" checked onchange="filter();"> Australia</li>
+        <li><input id="checkAT" type="checkbox" value="Austria" checked onchange="filter();"> Austria</li>
         <li><input id="checkBE" type="checkbox" value="Belgium" checked onchange="filter();"> Belgium</li>
         <li><input id="checkBR" type="checkbox" value="Brazil" checked onchange="filter();"> Brazil</li>
         <li><input id="checkCA" type="checkbox" value="Canada" checked onchange="filter();"> Canada</li>
@@ -398,6 +506,7 @@
         <li><input id="checkHK" type="checkbox" value="Hong Kong" checked onchange="filter();"> Hong Kong</li>
         <li><input id="checkIT" type="checkbox" value="Italy" checked onchange="filter();"> Italy</li>
         <li><input id="checkJP" type="checkbox" value="Japan" checked onchange="filter();"> Japan</li>
+        <li><input id="checkKR" type="checkbox" value="South Korea" checked onchange="filter();"> South Korea</li>
         <li><input id="checkMO" type="checkbox" value="Macau" checked onchange="filter();"> Macau</li>
         <li><input id="checkMX" type="checkbox" value="Mexico" checked onchange="filter();"> Mexico</li>
         <li><input id="checkNL" type="checkbox" value="Netherlands" checked onchange="filter();"> Netherlands</li>
@@ -406,6 +515,7 @@
         <li><input id="checkSE" type="checkbox" value="Sweden" checked onchange="filter();"> Sweden</li>
         <li><input id="checkCH" type="checkbox" value="Switzerland" checked onchange="filter();"> Switzerland</li>
         <li><input id="checkTW" type="checkbox" value="Taiwan" checked onchange="filter();"> Taiwan</li>
+        <li><input id="checkTH" type="checkbox" value="Thailand" checked onchange="filter();"> Thailand</li>
         <li><input id="checkTR" type="checkbox" value="Turkey" checked onchange="filter();"> Turkey</li>
         <li><input id="checkAE" type="checkbox" value="UAE" checked onchange="filter();"> United Arab Emirates</li>
         <li><input id="checkUK" type="checkbox" value="UK" checked onchange="filter();"> United Kingdom</li>
@@ -415,6 +525,7 @@
   <div id="wrap">
   <div class="row">
     <script type="text/javascript">
+      var count = 0;
       pictureSet("US", "Glendale Galleria", "001", "");
       pictureSet("US", "Palo Alto", "002", "");
       pictureSet("US", "Bellevue Square", "003", "");
@@ -422,13 +533,13 @@
       pictureSet("Japan", "Nagoya Sakae", "005", "");
       pictureSet("US", "Lenox Square", "006", "");
       pictureSet("US", "Mall of America", "007", "");
-      pictureSet("US", "Willow Bend", "008", "");
+      closedStore("US", "Willow Bend", "008");
       pictureSet("US", "Easton Town Center", "009", "");
       pictureSet("US", "Tysons Corner", "010", "");
       pictureSet("US", "MarketStreet", "011", "");
       pictureSet("US", "The Falls", "012", "");
       pictureSet("US", "Tice's Corner", "013", "");
-      pictureSet("US", "Walnut Creek", "014", "");
+      pictureSet("US", "Broadway Plaza", "014", "");
       pictureSet("US", "Fashion Island", "015", "");
       pictureSet("US", "Walden Galleria", "016", "");
       pictureSet("US", "Crossgates", "017", "");
@@ -443,13 +554,13 @@
       pictureSet("US", "Chandler Fashion Center", "026", "");
       pictureSet("US", "Rockingham Park", "027", "");
       pictureSet("US", "Kenwood Towne Centre", "028", "");
-      pictureSet("US", "Burlingame", "029", "updating");
+      pictureSet("US", "Burlingame", "029", "");
       pictureSet("US", "Aspen Grove", "030", "");
-      pictureSet("US", "Biltmore", "031", "");
+      pictureSet("US", "Scottsdale Fashion Square", "031", "");
       pictureSet("US", "SoHo", "032", "");
       pictureSet("US", "Stonestown", "033", "");
       pictureSet("US", "Pasadena", "034", "");
-      pictureSet("US", "North Michigan Avenue", "035", "");
+      globalFlagship("US", "Michigan Avenue", "035", "");
       pictureSet("US", "Clarendon", "036", "");
       pictureSet("Italy", "RomaEst", "038", "");
       pictureSet("US", "Valley Fair", "039", "");
@@ -490,7 +601,7 @@
       pictureSet("US", "Boca Raton", "074", "");
       pictureSet("US", "Union Square", "075", "");
       pictureSet("US", "Chestnut Hill", "076", "");
-      pictureSet("US", "Pioneer Place", "077", "");
+      pictureSet("US", "Pioneer Place", "077", "updating");
       pictureSet("US", "Short Pump Town Center", "078", "");
       pictureSet("Japan", "Ginza", "079", "");
       pictureSet("US", "Avalon", "080", "");
@@ -512,11 +623,11 @@
       pictureSet("US", "Shadyside", "096", "");
       pictureSet("US", "Country Club Plaza", "097", "");
       pictureSet("US", "Stanford", "099", "");
-      pictureSet("US", "Alderwood Mall", "100", "");
+      pictureSet("US", "Alderwood", "100", "");
       pictureSet("US", "Stoneridge Mall", "101", "");
       pictureSet("US", "Christiana Mall", "102", "");
       pictureSet("US", "Rockaway", "103", "");
-      pictureSet("US", "Bridgewater", "104", "");
+      pictureSet("US", "Bridgewater", "104", "updating");
       pictureSet("US", "Oakridge", "105", "");
       pictureSet("US", "Southcenter", "106", "");
       pictureSet("US", "Syracuse", "107", "");
@@ -540,6 +651,7 @@
       pictureSet("US", "City Creek Center", "125", "");
       pictureSet("US", "The Woodlands", "126", "");
       pictureSet("US", "The Gardens Mall", "127", "");
+      pictureSet("Japan", "Shinjuku", "128", "");
       pictureSet("US", "Pentagon City", "129", "");
       pictureSet("US", "Penn Square", "130", "");
       pictureSet("US", "La Cantera", "131", "");
@@ -559,10 +671,10 @@
       pictureSet("US", "South Hills Village", "147", "");
       pictureSet("US", "Sherman Oaks", "148", "");
       pictureSet("US", "Boylston Street", "149", "");
-      pictureSet("Japan", "Sendai Ichibancho", "150", "");
+      closedStore("Japan", "Sendai Ichibancho", "150");
       pictureSet("US", "Southlake Town Square", "151", "");
       pictureSet("US", "Staten Island", "152", "");
-      pictureSet("UK", "Meadowhall", "153", "updating");
+      pictureSet("UK", "Meadowhall", "153", "");
       pictureSet("US", "The Oaks", "154", "");
       pictureSet("US", "Burlington", "155", "");
       pictureSet("US", "Brea Mall", "156", "");
@@ -574,11 +686,11 @@
       pictureSet("US", "Suburban Square", "166", "");
       pictureSet("US", "Providence Place", "167", "");
       pictureSet("US", "Columbia", "168", "");
-      pictureSet("US", "Waterside Shops", "169", "");
-      pictureSet("US", "Simi Valley", "171", "");
+      pictureSet("US", "Waterside Shops", "169", "updating");
+      closedStore("US", "Simi Valley", "171");
       pictureSet("US", "Twenty Ninth Street", "172", "");
-      pictureSet("US", "The Pier", "173", "");
-      pictureSet("UK", "WestQuay", "174", "");
+      closedStore("US", "The Pier", "173");
+      pictureSet("UK", "Southampton", "174", "");
       pictureSet("UK", "The Oracle", "176", "");
       pictureSet("US", "ABQ Uptown", "177", "");
       pictureSet("France", "Les Quatre Temps", "178", "");
@@ -608,7 +720,7 @@
       pictureSet("US", "Otay Ranch", "213", "");
       pictureSet("US", "The Galleria", "214", "");
       pictureSet("UK", "Manchester Arndale", "215", "");
-      pictureSet("US", "The Domain", "216", "");
+      pictureSet("US", "Domain NORTHSIDE", "216", "");
       pictureSet("US", "Chestnut Street", "217", "");
       pictureSet("US", "Partridge Creek", "218", "");
       pictureSet("US", "Town Square", "219", "");
@@ -618,7 +730,7 @@
       pictureSet("UK", "White City", "226", "");
       pictureSet("UK", "Bentall Centre", "227", "");
       pictureSet("US", "Park Meadows", "228", "");
-      pictureSet("US", "West Towne", "229", "");
+      pictureSet("US", "Hilldale", "229", "");
       pictureSet("US", "Briarwood", "230", "");
       pictureSet("US", "Hillsdale", "231", "");
       pictureSet("US", "Natick Collection", "232", "");
@@ -639,7 +751,7 @@
       pictureSet("US", "Upper West Side", "251", "");
       pictureSet("UK", "Cabot Circus", "252", "");
       pictureSet("Australia", "Chatswood Chase", "253", "");
-      pictureSet("Australia", "Bondi", "254", "");
+      pictureSet("Australia", "Bondi", "254", "updating");
       pictureSet("UK", "Touchwood Centre", "255", "");
       pictureSet("US", "Bayshore", "257", "");
       pictureSet("US", "Deer Park", "258", "");
@@ -656,7 +768,7 @@
       pictureSet("US", "Uptown", "272", "");
       pictureSet("Canada", "West Edmonton", "273", "");
       pictureSet("Switzerland", "Rue de Rive", "275", "");
-      pictureSet("France", "Carrousel du Louvre", "276", "");
+      closedStore("France", "Carrousel du Louvre", "276");
       pictureSet("France", "Opéra", "277", "");
       pictureSet("Italy", "Le Gru", "278", "");
       pictureSet("UK", "Princesshay", "279", "");
@@ -671,7 +783,7 @@
       pictureSet("US", "Fayette Mall", "288", "");
       pictureSet("US", "Brandon", "289", "");
       pictureSet("US", "North Star", "290", "");
-      pictureSet("US", "Altamonte", "291", "");
+      pictureSet("US", "Altamonte", "291", "updating");
       pictureSet("US", "Scottsdale Quarter", "292", "");
       pictureSet("US", "Friendly Center", "293", "");
       pictureSet("US", "Carlsbad", "294", "");
@@ -680,7 +792,7 @@
       pictureSet("US", "Franklin Park Mall", "299", "");
       pictureSet("US", "Los Cerritos", "300", "");
       pictureSet("Canada", "Market Mall", "301", "");
-      pictureSet("US", "Stonebriar", "302", "");
+      closedStore("US", "Stonebriar", "302");
       pictureSet("US", "Boise Towne Square", "303", "");
       pictureSet("US", "Park City", "304", "");
       pictureSet("US", "Del Monte", "305", "");
@@ -731,7 +843,7 @@
       pictureSet("Italy", "Carosello", "365", "");
       pictureSet("Germany", "Alstertal", "366", "");
       pictureSet("France", "Odysseum", "367", "");
-      pictureSet("Spain", "Passeig de Gràcia", "368", "");
+      pictureSet("Spain", "Passeig de Gràcia", "368", "updating");
       pictureSet("Canada", "Polo Park", "369", "");
       pictureSet("UK", "Trinity Leeds", "372", "");
       pictureSet("France", "Part-Dieu", "373", "");
@@ -834,6 +946,7 @@
       pictureSet("US", "CoolSprings Galleria", "513", "");
       pictureSet("Canada", "Halifax Shopping Centre", "514", "");
       pictureSet("Canada", "Markville Shopping Centre", "515", "");
+      globalFlagship("US", "Carnegie Library", "516", "updating");
       pictureSet("US", "The Greene", "518", "");
       pictureSet("Germany", "Sindelfingen", "519", "");
       pictureSet("Germany", "Rhein Center", "520", "");
@@ -842,6 +955,7 @@
       pictureSet("Australia", "Broadway", "523", "");
       pictureSet("UK", "Watford", "527", "");
       pictureSet("Australia", "Fountain Gate", "530", "");
+      pictureSet("China", "Tianyi Square", "531", "")
       pictureSet("China", "MixC Hangzhou", "532", "");
       pictureSet("China", "Zhongjie Joy City", "534", "");
       pictureSet("France", "Rosny 2", "536", "");
@@ -895,7 +1009,7 @@
       pictureSet("US", "Trumbull", "629", "");
       pictureSet("US", "The Mall of New Hampshire", "631", "");
       pictureSet("China", "Tianjin Joy City", "637", "");
-      pictureSet("China", "Galaxy Mall", "638", "");
+      pictureSet("China", "MixC Tianjin", "638", "");
       pictureSet("China", "Zhujiang New Town", "639", "");
       pictureSet("China", "Wonder City", "643", "");
       pictureSet("China", "Xiamen Lifestyle Center", "644", "");
@@ -906,22 +1020,34 @@
       pictureSet("US", "World Trade Center", "654", "");
       closedStore("France", "Galeries Lafayette", "658");
       closedStore("UK", "Selfridges", "659");
+      globalFlagship("Italy", "Piazza Liberty", "667", "");
       pictureSet("Singapore", "Orchard Road", "669", "");
+      pictureSet("China", "Suzhou", "688", "");
       pictureSet("China", "Kunming", "670", "");
       pictureSet("Macau", "Galaxy Macau", "672", "");
       pictureSet("Hong Kong", "apm Hong Kong", "673", "");
+      globalFlagship("France", "Champs-Élysées", "675","")
       pictureSet("China", "Global Harbor", "683", "");
+      pictureSet("Austria", "Kärntner Straße", "687", "");
+      pictureSet("Korea", "Garosugil", "692", "");
+      pictureSet("Macau", "Cotai Central", "697", "");
       pictureSet("China", "Nanjing Jinmao Place", "703", "");
       pictureSet("China", "Qibao", "705", "");
       pictureSet("Mexico", "Vía Santa Fe", "708", "");
+      pictureSet("Japan", "Kyoto", "711", "");
       pictureSet("Taiwan", "Taipei 101", "713", "");
-      pictureSet("US", "Apple Park Visitor Center", "824", "updating");
+      pictureSet("US", "Downtown Brooklyn", "715", "");
+      pictureSet("Thailand", "Iconsiam", "728", "");
+      pictureSet("US", "Galleria Dallas", "746", "");
+      globalFlagship("US", "Apple Park Visitor Center", "824", "");
+      console.log(count + " stores in the world.");
     </script>
     <script type="text/javascript">
       function filter() {
         var filterUS = {
           ".US": document.getElementById("checkUS").checked,
           ".Australia": document.getElementById("checkAU").checked,
+          ".Austria": document.getElementById("checkAT").checked,
           ".Belgium": document.getElementById("checkBE").checked,
           ".Brazil": document.getElementById("checkBR").checked,
           ".Canada": document.getElementById("checkCA").checked,
@@ -939,6 +1065,7 @@
           ".Sweden": document.getElementById("checkSE").checked,
           ".Switzerland": document.getElementById("checkCH").checked,
           ".Taiwan": document.getElementById("checkTW").checked,
+          ".Thailand": document.getElementById("checkTH").checked,
           ".Turkey": document.getElementById("checkTR").checked,
           ".UAE": document.getElementById("checkAE").checked,
           ".UK": document.getElementById("checkUK").checked,
