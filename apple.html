@@ -108,7 +108,7 @@
   div.ubadge {
     display: none;
   }
-  .badge {
+  div.cbadge {
     display: none;
   }
 
@@ -420,7 +420,7 @@
 
       var flagIconLink = "https://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
-      store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+      store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
 
       document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 normal " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\"><div class=\"ubadge\">UPDATING</div>"+ pic + store + "</div></a></div>");
       count = count + 1;
@@ -449,9 +449,9 @@
       var flagIconLink = "https://images.apple.com/global/elements/flags/30x30/" + countryValue(country).flag + "_2x.png";
 
       if (storeNumber == "824") {
-        store = "<h2>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+        store = "<h2>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
       } else {
-        store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">UPDATING</p></div>";
+        store = "<h2><span class=\"corp\">Apple </span>" + storeName + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
       }
 
       document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 gf " + storeStatus + " " + country + "\" id=\"" + storeNumber + "\">" + "<a href=\"" + storeLink + "\" target=\"_blank\"><div class=\"cell\"><div class=\"gfbadge\">GLOBAL FLAGSHIP</div>"+ pic + store + "</div></a></div>");
@@ -461,7 +461,7 @@
     function closedStore(country, location, storeNumber){
       var flagIconLink = "images/flags/" + countryValue(country).flag + "_2x.png";
 
-      store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div><p class=\"badge\">CLOSED</p></div>";
+      store = "<h2>" + location + "</h2>" + "<div class=\"row\"><h1>R" + storeNumber + "</h1>" + "<div class=\"flag\"><img src=\"" + flagIconLink + "\">" + "</div></div>";
 
       document.write("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3 closed " + country + "\" id=\"" + storeNumber + "\">" + "<div class=\"cell\"><div class=\"cbadge\">CLOSED</div>" + "<img src=\"images/no_pic.png\" alt=\"" + storeNumber + "\">" + store + "</div></div>");
     }
