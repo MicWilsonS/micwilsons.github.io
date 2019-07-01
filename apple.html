@@ -8,23 +8,17 @@
   <meta name="author" content="Míc Sun">
   <style>
   * {
-    font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
-    color: white;
-  }
-  body {
-    background-color: #111;
+    font-family: SFProRounded, -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
   }
   nav {
     position: fixed;
     top: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(17, 17, 17, 0.6);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     z-index: 999;
   }
   legend {
-    color: white;
     width: 100%;
     font-size: 20px;
     line-height: 60px;
@@ -42,25 +36,14 @@
     margin: 0;
   }
   div.cell {
-    background-color: #222;
     height: 60px;
     width: 100%;
     margin-bottom: 15px;
-  }
-  div.updating div.cell {
-    background-color: #fb0;
-    color: black;
-  }
-  div.closed div.cell {
-    background-color: #000;
   }
   div.cell img {
     width: 90px;
     height: 60px;
     float: left;
-  }
-  div.gf div.cell{
-    background-color: #B96;
   }
   div.gf div.gfbadge {
     display: none;
@@ -91,9 +74,6 @@
     font-weight: 400;
     float: left;
   }
-  div.updating h1 {
-    color: black;
-  }
   h1:hover {
     text-decoration: none;
   }
@@ -115,30 +95,24 @@
   @media (min-width: 768px) {
     * {
       font-family: -apple-system, "Helvetiva Neue", Helvetica, Arial, sans-serif;
-      color: white;
-    }
-    body {
-      background-color: #111;
     }
     nav {
-			position: fixed;
-			top: 0;
-			height: 80px;
-			width: 100%;
-			background-color: rgba(17, 17, 17, 0.6);
-			-webkit-backdrop-filter: saturate(180%) blur(20px);
+      position: fixed;
+      top: 0;
+      height: 80px;
+      width: 100%;
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
       z-index: 999;
-		}
-		legend {
-			color: white;
-			width: 100%;
+    }
+    legend {
+      width: 100%;
       font-size: 28px;
       line-height: 80px;
       font-weight: 500;
-			text-align: center;
-			margin: 0;
-			border: none;
-		}
+      text-align: center;
+      margin: 0;
+      border: none;
+    }
     div#wrap {
       margin-top: 100px;
     }
@@ -147,17 +121,10 @@
       margin: 0 auto;
     }
     div.cell, div.gf div.cell {
-      background-color: #222;
       border-radius: 21px;
       height: 315px;
       width: 350px;
       margin: 10px auto;
-    }
-    div.updating div.cell {
-      background-color: #fb0;
-    }
-    div.updating span.corp {
-      color: black;
     }
     div.updating div.ubadge {
       display: block;
@@ -172,12 +139,6 @@
       border-top-left-radius: 21px;
       border-top-right-radius: 21px;
       margin-bottom: -36px;
-    }
-    div.closed div.cell {
-      background-color: #222;
-    }
-    div.cell:hover {
-      box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
     }
     div.normal img {
       width: 350px;
@@ -195,8 +156,6 @@
       letter-spacing: 0.5em;
       line-height: 35px;
       text-align: center;
-      background-color: #B96;
-      border-bottom: 1px solid black;
       border-top-left-radius: 21px;
       border-top-right-radius: 21px;
     }
@@ -215,7 +174,6 @@
       letter-spacing: 0.5em;
       line-height: 35px;
       text-align: center;
-      background-color: #222;
       border-bottom: 1px solid black;
       border-top-left-radius: 21px;
       border-top-right-radius: 21px;
@@ -246,7 +204,7 @@
       font-weight: 400;
       float: left;
     }
-    h1:hover {
+    h1:hover, h2:hover {
       text-decoration: none;
     }
     div.flag {
@@ -254,13 +212,161 @@
       margin-right: 10px;
     }
     div.flag > img {
-      border: 1px white solid;
       border-radius: 16px;
       height: 32px;
       width: 32px;
     }
+}
+@media (prefers-color-scheme: dark) {
+    * {
+      color: white;
+    }
+    body {
+      background-color: #111;
+    }
+    nav {
+      background-color: rgba(17, 17, 17, 0.6);
+    }
+    legend {
+      color: white;
+    }
+    div.cell {
+      background-color: #222;
+    }
+    div.updating div.cell {
+      background-color: #fb0;
+      color: black;
+    }
+    div.closed div.cell {
+      background-color: #000;
+    }
+    div.gf div.cell{
+      background-color: #B96;
+    }
+    div.updating h1 {
+      color: black;
+    }
 
+    @media (min-width: 768px) {
+      * {
+        color: white;
+      }
+      body {
+        background-color: #111;
+      }
+      nav {
+  			background-color: rgba(17, 17, 17, 0.6);
+  		}
+  		legend {
+  			color: white;
+  		}
+      div.cell, div.gf div.cell {
+        background-color: #222;
+      }
+      div.updating div.cell {
+        background-color: #fb0;
+      }
+      div.updating span.corp {
+        color: black;
+      }
+      div.updating div.ubadge {
+        text-shadow: 0 0 5px #555;
+      }
+      div.closed div.cell {
+        background-color: #222;
+      }
+      div.cell:hover {
+        box-shadow: 0 0 5px rgba(0, 150, 255, 0.8);
+      }
+      div.gf div.gfbadge {
+        background-color: #B96;
+        border-bottom: 1px solid black;
+      }
+      div.closed div.cbadge {
+        background-color: #222;
+        border-bottom: 1px solid black;
+      }
+      div.flag > img {
+        border: 1px white solid;
+      }
+    }
   }
+
+  @media (prefers-color-scheme: light) {
+      * {
+        color: black;
+      }
+      body {
+        background-color: #eee;
+      }
+      nav {
+        background-color: rgba(222, 222, 222, 0.6);
+      }
+      legend {
+        color: black;
+      }
+      div.cell {
+        background-color: #ddd;
+      }
+      div.updating div.cell {
+        background-color: #fc0;
+        color: black;
+      }
+      div.closed div.cell {
+        background-color: #ccc;
+      }
+      div.gf div.cell{
+        background-color: #fb5;
+      }
+      div.updating h1 {
+        color: black;
+      }
+
+      @media (min-width: 768px) {
+        * {
+          color: black;
+        }
+        body {
+          background-color: #eee;
+        }
+        nav {
+    			background-color: rgba(200, 200, 200, 0.6);
+    		}
+    		legend {
+    			color: black;
+    		}
+        div.cell, div.gf div.cell {
+          background-color: #ddd;
+        }
+        div.updating div.cell {
+          background-color: #fc0;
+        }
+        div.updating span.corp {
+          color: black;
+        }
+        div.updating div.ubadge {
+          color: white;
+          text-shadow: 0 0 5px #555;
+        }
+        div.closed div.cell {
+          background-color: #ddd;
+        }
+        div.cell:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+        div.gf div.gfbadge {
+          background-color: #B96;
+          border-bottom: 1px solid white;
+        }
+        div.closed div.cbadge {
+          background-color: #aaa;
+          border-bottom: 1px solid white;
+        }
+        div.flag > img {
+          border: 1px white solid;
+        }
+      }
+    }
   </style>
   <script type="text/javascript">
 		function normalLetter(string, country, storeNumber){
